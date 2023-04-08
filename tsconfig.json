@@ -27,6 +27,8 @@
       "@utils/*": [
         "utils/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
