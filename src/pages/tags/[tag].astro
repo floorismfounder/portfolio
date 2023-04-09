@@ -37,17 +37,25 @@ const tagPosts = getPostsByTag(posts, tag);
 
 <Layout title={`Tag:${tag} | ${SITE.title}`}>
   <Header activeNav="tags" />
-  <Main
-    pageTitle={`Tag:${tag}`}
-    pageDesc={`All the articles with the tag "${tag}".`}
-  >
-    <ul>
-      {
-        tagPosts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
-        ))
-      }
-    </ul>
-  </Main>
+  <div id="swup" class="container transition-fade">
+    <Main
+      pageTitle={`Tag:${tag}`}
+      pageDesc={`All the articles with the tag "${tag}".`}
+    >
+      <ul>
+        {
+          tagPosts.map(({ data }) => (
+            <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+          ))
+        }
+      </ul>
+    </Main>
+  </div>
   <Footer />
 </Layout>
+
+<style>
+    #swup.container {
+  @apply px-4 mx-auto max-w-7xl;
+}
+</style>

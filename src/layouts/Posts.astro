@@ -23,15 +23,17 @@ const next = pageNum < totalPages ? "" : "disabled";
 
 <Layout title={`Posts | ${SITE.title}`}>
   <Header activeNav="posts" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
-    <ul>
-      {
-        posts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
-        ))
-      }
-    </ul>
-  </Main>
+  <div id="swup" class="container transition-fade">
+    <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+      <ul>
+        {
+          posts.map(({ data }) => (
+            <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+          ))
+        }
+      </ul>
+    </Main>
+  </div>
 
   {
     totalPages > 1 && (
@@ -74,4 +76,7 @@ const next = pageNum < totalPages ? "" : "disabled";
   .disabled-svg {
     @apply group-hover:!fill-skin-base;
   }
+  #swup.container {
+  @apply px-4 mx-auto max-w-7xl;
+}
 </style>

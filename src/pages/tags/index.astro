@@ -15,10 +15,18 @@ let tags = getUniqueTags(posts);
 
 <Layout title={`Tags | ${SITE.title}`}>
   <Header activeNav="tags" />
-  <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
-    <ul>
-      {tags.map(tag => <Tag name={tag} size="lg" />)}
-    </ul>
-  </Main>
+  <div id="swup" class="container transition-fade">
+    <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
+      <ul>
+        {tags.map(tag => <Tag name={tag} size="lg" />)}
+      </ul>
+    </Main>
+  </div>
   <Footer />
 </Layout>
+
+<style>
+    #swup.container {
+  @apply px-4 mx-auto max-w-7xl;
+}
+</style>
